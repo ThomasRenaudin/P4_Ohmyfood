@@ -1,0 +1,143 @@
+@charset "UTF-8";
+:root {
+  --dark-gray-bg-color: #EAEAEA;
+  --dark-gray-writing-color: #353535;
+  --light-gray-bg-color: #F6F6F6;
+  --dark-purple-button: #9356DC;
+  --ligth-purple-button: #FF79DA;
+  --light-green: #99E2D0;
+  --dark-green: #008766;
+  --white: #FFF;
+}
+
+/* Animation numéro 1 : Eclaircissement des boutons + Ombre portée */
+.btnviolet:hover {
+  opacity: 0.8;
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.35);
+}
+
+/* Animation numéro 2 : EGestion de la couleur des coeurs au hover */
+.restaurants__card__coeur__plein {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.restaurants__card__coeur {
+  display: inline-block;
+}
+
+.restaurants__card__coeur__plein:hover {
+  opacity: 1;
+}
+
+.titrerestaurant .restaurants__card__coeur__plein {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.restaurants__card__coeur__plein:hover {
+  opacity: 1;
+}
+
+/* Animation numéro 3 : Barre de chargement */
+.Ecran__chargement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background-color: var(--light-gray-bg-color);
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  opacity: 0.8;
+  visibility: visible;
+  animation: disparition 2s linear forwards;
+}
+
+.animation__loader {
+  opacity: 1;
+  color: var(--dark-purple-button);
+}
+
+@keyframes disparition {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+.titre__chargement {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: bold;
+  color: var(--dark-gray-writing-color);
+}
+
+.texte__chargement {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--dark-gray-writing-color);
+}
+
+/* Animation numéro 4 : Apparition du checkbox */
+.recettesflexbox__recette__checkbox {
+  width: 0px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 1s ease, transform 1s ease, width 1s ease; /* Ajout de la transition de la largeur */
+}
+
+.recettesflexbox__checkbox:hover .recettesflexbox__recette__checkbox {
+  opacity: 1;
+  transform: translateX(0%);
+  width: 59px;
+}
+
+.recettesflexbox__checkbox {
+  /* Ajout de la transition pour le non-hover */
+  transition: padding 0.5s ease;
+  padding: 15px 0px 15px 15px; /* Assurez-vous que les styles de départ sont correctement définis */
+}
+
+/* Animation numéro 5 : Apparition décalée des menus */
+/* Appliquer l'opacité à 0 par défaut pour chaque section */
+.Entrées, .Plats, .Dessert {
+  opacity: 0;
+}
+
+/* Appliquer l'animation avec le décalage */
+.Entrées {
+  animation: slideInFromLeft 2s ease forwards;
+}
+
+.Plats {
+  animation: slideInFromLeft 2s ease forwards;
+  animation-delay: 1s;
+}
+
+.Dessert {
+  animation: slideInFromLeft 2s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%); /* Début de la translation à 100% vers la gauche */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); /* Fin de la translation (pas de décalage) */
+    opacity: 1;
+  }
+}/*# sourceMappingURL=animations.css.map */

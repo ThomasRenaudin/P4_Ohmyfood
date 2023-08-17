@@ -1,0 +1,671 @@
+@charset "UTF-8";
+/* Général */
+/* Définit la police par défaut de tout le site */
+/* Définit les variables de couleur */
+:root {
+  --dark-gray-bg-color: #EAEAEA;
+  --dark-gray-writing-color: #353535;
+  --light-gray-bg-color: #F6F6F6;
+  --dark-purple-button: #9356DC;
+  --ligth-purple-button: #FF79DA;
+  --light-green: #99E2D0;
+  --dark-green: #008766;
+  --white: #FFF;
+}
+
+/* Définit des mixins qui seront réutilisées */
+.btnviolet {
+  border: 0;
+  border-radius: 25px;
+  background: var(--button-gradient, linear-gradient(175deg, var(--dark-purple-button) 0%, var(--ligth-purple-button) 100%));
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.3s, box-shadow 0.3s; /* Ajout de transitions */
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/*Header*/
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 63px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.header__logo {
+  width: 52%;
+  height: 36px;
+}
+
+/* Location */
+.location {
+  background-color: var(--dark-gray-bg-color);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 17px;
+}
+
+.location__ville {
+  color: var(--dark-gray-writing-color);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.location__icone {
+  color: var(--dark-gray-writing-color);
+  width: 12px;
+  height: 16px;
+}
+
+/* Réservation */
+.reservation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: var(--light-gray-bg-color);
+}
+
+.reservation__titre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-align: center;
+  width: 73%;
+  min-height: 68px;
+  flex-shrink: 0;
+  margin-top: 40px;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.reservation__slogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-align: center;
+  width: 84%;
+  min-height: 46px;
+  flex-shrink: 0;
+  color: var(--dark-gray-writing-color);
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.reservation__explorerbtn {
+  width: 58%;
+  height: 50px;
+  flex-shrink: 0;
+  margin-top: 27px;
+  margin-bottom: 50px;
+}
+
+.reservation__explorerbtn--texte {
+  color: var(--white, #FFF);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* Fonctionnement */
+.fonctionnement {
+  width: 100%;
+}
+
+.fonctionnement__titre {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 20px;
+  margin-top: 48px;
+  margin-bottom: 28px;
+}
+
+.fonctionnement__etapes__flexbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 25px;
+  margin-top: 25px;
+  margin-bottom: 68px;
+}
+
+.fonctionnement__etape {
+  width: 86%;
+  min-height: 72.379px;
+  border-radius: 20px;
+  background: var(--dark-gray-bg-color);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 27px;
+  position: relative; /* Pour positionner l'icone du chiffre */
+}
+
+.fa-stack {
+  position: absolute;
+  left: -20px; /* Ajuster la valeur pour obtenir la position souhaitée */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.fa-stack .fa-stack-2x {
+  width: 24px;
+  height: 24px;
+  color: var(--dark-purple-button);
+  left: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.fa-stack .fa-stack-1x {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--white, #FFF);
+  line-height: 24px;
+  text-align: center;
+}
+
+.fonctionnement__icone {
+  width: 13.019px;
+  height: 19.903px;
+  color: var(--dark-gray-writing-color);
+}
+
+.fonctionnement__icone--violet {
+  color: var(--dark-purple-button);
+}
+
+.fonctionnement__etape__texte {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 56%;
+}
+
+/* Restaurants */
+.restaurants {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: var(--dark-gray-bg-color);
+  gap: 18px;
+  padding-bottom: 66px;
+}
+
+.restaurants__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-top: 54px;
+}
+
+.restaurants__card {
+  width: 90%;
+  height: 308px;
+  border-radius: 15px;
+  background: var(--white, #FFF);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  flex-wrap: nowrap;
+}
+
+.restaurants__card__redirection {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.restaurants__card__texte {
+  height: 77px;
+  gap: 5px;
+  padding: 16px 60px 12px 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: left;
+  flex-wrap: nowrap;
+}
+
+.restaurants__card--titre {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.restaurants__card--soustitre {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.restaurants__card--image {
+  width: 100%;
+  height: 231px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.restaurants__card__nouveau {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 80px;
+  height: 29px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background: var(--green, #99E2D0);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 19px;
+  right: 12px;
+}
+
+.restaurants__card__nouveau__p {
+  color: var(--dark-green, #008766);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.restaurants__card__coeur {
+  position: absolute;
+  bottom: 33px;
+  right: 25px;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 6% 7%;
+  gap: 16px;
+  background-color: var(--dark-gray-writing-color);
+}
+
+.footer__logo {
+  width: 139px;
+  height: 27px;
+  color: var(--white);
+  font-family: "Shrikhand", cursive;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footer__liensflexbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.footer__liensflexbox--lien {
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 11px;
+  text-decoration: none;
+}
+
+/* CSS SPECIFIQUE PAGE DES RESTAURANTS */
+/*Header*/
+.headersecondaire {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 42px;
+  height: 63px;
+}
+
+.headersecondaire__logo {
+  display: flex;
+  width: 197px;
+  height: 36px;
+  padding: 0px 19px 0px 16px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  text-align: center;
+  font-family: Shrikhand;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.headersecondaire__retourmenu {
+  width: 30px;
+  height: 30px;
+}
+
+/*Illustration*/
+.illustrationrestaurant__image {
+  width: 100%;
+  height: auto; /* Pas exactement demande de la maquette mais je trouve ca plus joli */
+  max-height: 300px;
+  z-index: -20;
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*Flexboxprincipal*/
+.pageflexbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 40px;
+  background-color: var(--light-gray-bg-color);
+  border-radius: 40px 40px 0px 0px;
+  margin-top: -50px;
+  padding-top: 32px;
+}
+
+/*Titre*/
+.titrerestaurant {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 91%;
+  position: relative;
+}
+
+.titrerestaurant__titre {
+  color: var(--black, #101010);
+  font-family: Shrikhand;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: calc(100% - 40px);
+}
+
+.titrerestaurant__coeur {
+  width: 22px;
+  height: 22px;
+  font-size: 22px;
+  position: absolute;
+  right: 5%; /* Marge de 11% à droite par rapport à l'écran */
+}
+
+/*Recettes*/
+.recettesflexbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 12px;
+  width: 100%;
+}
+
+.recettesflexbox__titre {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  width: 93%;
+  position: relative;
+}
+
+.recettesflexbox__titre::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #99E2D0;
+}
+
+.recettesflexbox__recette {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 5px;
+  overflow: hidden;
+}
+
+.recettesflexbox__checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: nowrap;
+  width: 93%;
+  height: 69px;
+  box-sizing: border-box;
+  align-items: center;
+  border-radius: 15.043px;
+  background: var(--white, #FFF);
+  box-shadow: 0px 4.0114941597px 15.0431032181px 0px rgba(0, 0, 0, 0.1);
+  padding: 15px 15px 15px 15px;
+  gap: 15px;
+}
+
+.recettesflexbox__recette--titre {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+.recettesflexbox__recette--descriptionetprix {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.recettesflexbox__recette--description {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  width: 82%;
+  white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recettesflexbox__recette--prix {
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.recettesflexbox__recette__checkbox {
+  width: 59px;
+  height: 69px;
+}
+
+.commande__btn {
+  width: 58%;
+  height: 50px;
+  flex-shrink: 0;
+  margin-top: 27px;
+  margin-bottom: 50px;
+}
+
+.commande__btn--texte {
+  color: var(--white, #FFF);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* Responsive version ecran larges */
+@media (min-width: 1023px) {
+  .headersecondaire__logo {
+    width: 80%;
+  }
+  .illustrationrestaurant__image {
+    max-height: 500px;
+  }
+  .pageflexbox {
+    width: 73%;
+    margin-left: 13%;
+  }
+  .titrerestaurant {
+    justify-content: center;
+    width: 40%;
+  }
+  .recettesflexbox {
+    width: 60%;
+  }
+  .footer {
+    flex-direction: row;
+    padding: 30px 25px;
+    gap: 80px;
+    justify-content: right;
+  }
+  .footer__logo {
+    order: 2;
+    margin-right: 25px;
+  }
+  .footer__liensflexbox {
+    flex-direction: row;
+  }
+  .header {
+    height: 96px;
+  }
+  .reservation__titre {
+    font-size: 40px;
+  }
+  .reservation__explorerbtn {
+    width: 218px;
+  }
+  .fonctionnement {
+    margin: auto;
+    width: 75%;
+  }
+  .fonctionnement__etapes__flexbox {
+    flex-direction: row;
+    justify-content: left;
+    gap: 35px;
+  }
+  .restaurants__title {
+    width: 100%;
+  }
+  .restaurants__card {
+    min-width: 34%;
+    max-width: 45%;
+    margin-top: -50px;
+  }
+  .restaurants {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 12%;
+    padding-right: 12%;
+    gap: 100px;
+  }
+}/*# sourceMappingURL=style.css.map */
