@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/* Réinitialisation des styles */
+@import url("reset.css");
+/*Animations */
+@import url("Animations.css");
 /* Général */
 /* Définit la police par défaut de tout le site */
 /* Définit les variables de couleur */
