@@ -16,7 +16,7 @@
   box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.35);
 }
 
-/* Animation numéro 2 : EGestion de la couleur des coeurs au hover */
+/* Animation numéro 2 : Gestion de la couleur des coeurs au hover */
 .restaurants__card__coeur__plein {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -107,7 +107,7 @@
 .recettesflexbox__checkbox {
   /* Ajout de la transition pour le non-hover */
   transition: padding 0.5s ease;
-  padding: 15px 0px 15px 15px; /* Assurez-vous que les styles de départ sont correctement définis */
+  padding: 15px 0px 15px 15px;
 }
 
 /* Animation numéro 5 : Apparition décalée des menus */

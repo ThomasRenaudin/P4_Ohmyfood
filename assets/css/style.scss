@@ -215,7 +215,7 @@ border-radius: 15px;
 background: var(--white, #FFF);
 box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
 position : relative;
-@include flexbox(column,center ,left ,nowrap );
+@include flexbox(column,center ,unset ,nowrap );
 }
 
 
@@ -231,7 +231,7 @@ position : relative;
   height : 77px;
   gap : 5px;
   padding : 16px 60px 12px 13px;
-  @include flexbox(column,start ,left ,nowrap );
+  @include flexbox(column,start ,unset ,nowrap );
 }
 
 .restaurants__card--titre{
@@ -315,31 +315,23 @@ line-height: normal;
 /*Header*/
 
 .headersecondaire {
-  @include flexbox(row,left ,center ,nowrap );
   gap : 42px;
   height : 63px;
+  position : relative;
  }
  
- .headersecondaire__logo{
- display: flex;
- width: 197px;
- height: 36px;
- padding: 0px 19px 0px 16px;
- justify-content: center;
- align-items: center;
- flex-shrink: 0;
- text-align: center;
- font-family: Shrikhand;
- font-size: 30px;
- font-style: normal;
- font-weight: 400;
- line-height: normal;
- }
- 
- .headersecondaire__retourmenu{
- width : 30px;
- height : 30px;
- }
+.headersecondaire__retourmenu{
+  position : absolute;
+  top : 10px;
+  left : 10px;
+}
+
+.headersecondaire__flexbox{
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
+}
 
 /*Illustration*/ 
 
@@ -434,6 +426,7 @@ background: var(--white, #FFF);
 box-shadow: 0px 4.011494159698486px 15.043103218078613px 0px rgba(0, 0, 0, 0.10);
 padding : 15px 15px 15px 15px;
 gap : 15px;
+overflow: hidden;
 }
 
 
@@ -442,7 +435,6 @@ gap : 15px;
   @include font(18px, 500, normal);
   font-weight: bold;
   text-overflow: ellipsis;
-  text-wrap: nowrap;
   overflow: hidden;
   width: 100%;
 }
@@ -457,9 +449,9 @@ gap : 15px;
   @include font(15px, 300, normal);
   width : 82%;
   white-space: nowrap;
-    display: inline-block;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .recettesflexbox__recette--prix{
@@ -489,10 +481,6 @@ gap : 15px;
 /* Responsive version ecran larges */
 
 @media (min-width: 1023px) {
-
-  .headersecondaire__logo {
-    width: 80%;
-}
 
   .illustrationrestaurant__image {
     max-height: 500px;
