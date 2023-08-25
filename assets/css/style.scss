@@ -1,3 +1,11 @@
+/* Réinitialisation des styles */
+@import url('reset.css');
+
+/*Animations */
+@import url('Animations.css'); 
+
+
+
 /* Général */
 
 /* Définit la police par défaut de tout le site */
@@ -56,14 +64,11 @@ body{
   @include flexbox(row, center, center, nowrap);
   height: 63px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  &__logo{
+    width: 52%;
+    height: 36px;
+    }
 }
-
-.header__logo {
-  width: 52%;
-  height: 36px;
-}
-
-
 /* Location */
 
 .location {
@@ -72,17 +77,15 @@ body{
   height: 50px;
   @include flexbox(row, center, center, nowrap);
   gap: 17px;
-}
-
-.location__ville {
-  color: var(--dark-gray-writing-color);
-  @include font(16px, 500, normal);
-}
-
-.location__icone {
-  color: var(--dark-gray-writing-color);
-  width: 12px;
-  height: 16px;
+  &__ville{
+    color: var(--dark-gray-writing-color);
+    @include font(16px, 500, normal);
+  }
+  &__icone{
+    color: var(--dark-gray-writing-color);
+    width: 12px;
+    height: 16px;
+  }
 }
 
 /* Réservation */
@@ -90,72 +93,89 @@ body{
 .reservation {
   @include flexbox(column, center, center, nowrap);
   background-color: var(--light-gray-bg-color);
-}
 
-.reservation__titre {
-  @include flexbox(column, center, center, nowrap);
-  text-align: center;
-  width: 73%;
-  min-height: 68px;
-  flex-shrink: 0;
-  margin-top: 40px;
-  @include font(24px, 700, normal);
-}
+  &__titre{
+    @include flexbox(column, center, center, nowrap);
+    text-align: center;
+    width: 73%;
+    min-height: 68px;
+    flex-shrink: 0;
+    margin-top: 40px;
+    @include font(24px, 700, normal);
+  }
 
-.reservation__slogan {
-  @include flexbox(column, center, center, nowrap);
-  text-align: center;
-  width: 84%;
-  min-height: 46px;
-  flex-shrink: 0;
-  color: var(--dark-gray-writing-color);
-  @include font(18px, 300, normal);
-}
+  &__slogan{
+    @include flexbox(column, center, center, nowrap);
+    text-align: center;
+    width: 84%;
+    min-height: 46px;
+    flex-shrink: 0;
+    color: var(--dark-gray-writing-color);
+    @include font(18px, 300, normal);
+  }
 
-.reservation__explorerbtn {
-  width: 58%;
-  height: 50px;
-  flex-shrink: 0;
-  margin-top: 27px;
-  margin-bottom: 50px;
-}
+  &__explorerbtn{
+    width: 58%;
+    height: 50px;
+    flex-shrink: 0;
+    margin-top: 27px;
+    margin-bottom: 50px;
 
-.reservation__explorerbtn--texte {
-  color: var(--white, #FFF);
-  text-align: center;
-  @include font(16px, 500, normal);
+    &--texte{
+      color: var(--white, #FFF);
+      text-align: center;
+      @include font(16px, 500, normal)
+    }
+
+  }
 }
 
 /* Fonctionnement */
 
 .fonctionnement{
   width : 100%;
+  
+  &__titre{
+    @include font(24px, 700, normal);
+    margin-left : 20px;
+    margin-top : 48px;
+    margin-bottom : 28px;
+  }
+
+  &__etapes{
+    &__flexbox{
+      @include flexbox(column,center ,center ,nowrap );
+      gap : 25px;
+      margin-top : 25px;
+      margin-bottom : 68px;
+    }
+  }
+
+  &__etape{
+    width : 86%;
+    min-height: 72.379px;
+    border-radius: 20px;
+    background: var(--dark-gray-bg-color);
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    @include flexbox(row,center ,center ,nowrap );
+    gap : 27px;
+    position : relative; /* Pour positionner l'icone du chiffre */
+    &__texte{
+      @include font(16px, 500, normal);
+      width : 56%;
+    }
+  }
+
+  &__icone{
+    width: 13.019px;
+    height: 19.903px;
+    color: var(--dark-gray-writing-color);
+    &--violet{
+      color : var(--dark-purple-button);
+    }
+  }
 }
 
-.fonctionnement__titre{
-  @include font(24px, 700, normal);
-  margin-left : 20px;
-  margin-top : 48px;
-  margin-bottom : 28px;
-}
-
-.fonctionnement__etapes__flexbox{
-  @include flexbox(column,center ,center ,nowrap );
-  gap : 25px;
-  margin-top : 25px;
-  margin-bottom : 68px;
-}
-
-.fonctionnement__etape{
-  width : 86%;
-  min-height: 72.379px;
-  border-radius: 20px;
-  background: var(--dark-gray-bg-color);
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-  @include flexbox(row,center ,center ,nowrap );
-  gap : 27px;
-  position : relative; /* Pour positionner l'icone du chiffre */
-}
 
 .fa-stack {
   position: absolute;
@@ -176,20 +196,6 @@ body{
   }
 }
 
-.fonctionnement__icone{
-  width: 13.019px;
-  height: 19.903px;
-  color: var(--dark-gray-writing-color);
-}
-
-.fonctionnement__icone--violet{
-  color : var(--dark-purple-button);
-}
-
-.fonctionnement__etape__texte{
-  @include font(16px, 500, normal);
-  width : 56%;
-}
 
 /* Restaurants */
 
@@ -198,80 +204,76 @@ body{
 background-color: var(--dark-gray-bg-color);
 gap : 18px;
 padding-bottom: 66px;
+  &__title{
+  @include font(24px, 700, normal);
+  width : 90%;
+  @include flexbox(row,start,center ,nowrap );
+  margin-top: 54px;
 }
 
-.restaurants__title{
-@include font(24px, 700, normal);
-width : 90%;
-@include flexbox(row,start,center ,nowrap );
-margin-top: 54px;
+  &__card{
+    width : 90%;
+    height  : 308px;
+    border-radius: 15px;
+    background: var(--white, #FFF);
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
+    position : relative;
+    @include flexbox(column,center ,unset ,nowrap );
 
-}
+      &__redirection{
+        text-decoration: none;
+        color: inherit; 
+        display: block;
+        height: 100%;
+      }
 
-.restaurants__card{
-width : 90%;
-height  : 308px;
-border-radius: 15px;
-background: var(--white, #FFF);
-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
-position : relative;
-@include flexbox(column,center ,left ,nowrap );
-}
+      &__texte{
+        height : 77px;
+        gap : 5px;
+        padding : 16px 60px 12px 13px;
+        @include flexbox(column,start ,unset ,nowrap );
+      }
 
+      &--titre{
+        @include font(18px, 700, normal);
+      }
 
-.restaurants__card__redirection {
-  text-decoration: none;
-  color: inherit; 
-  display: block;
-  height: 100%;
-}
+      &--soustitre{
+        @include font(18px, 300, normal);
+      }
 
+      &--image{
+        width: 100%; 
+        height: 231px; 
+        object-fit: cover; 
+        border-radius: 15px 15px 0 0;
+      }
 
-.restaurants__card__texte{
-  height : 77px;
-  gap : 5px;
-  padding : 16px 60px 12px 13px;
-  @include flexbox(column,start ,left ,nowrap );
-}
+      &__nouveau{
+        @include flexbox(row,center ,center ,nowrap );
+        width: 80px;
+        height: 29px;
+        flex-shrink: 0;
+        border-radius: 2px;
+        background: var(--green, #99E2D0);
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+        position : absolute;
+        top : 19px;
+        right : 12px;
 
-.restaurants__card--titre{
-  @include font(18px, 700, normal);
-}
+        &__p{
+          color: var(--dark-green, #008766);
+          text-align: center;
+          @include font(14px,500 ,normal);
+        }
+      }
 
-.restaurants__card--soustitre{
-  @include font(18px, 300, normal);
-}
-
-.restaurants__card--image{
-  width: 100%; 
-  height: 231px; 
-  object-fit: cover; 
-  border-radius: 15px 15px 0 0;
-}
-
-.restaurants__card__nouveau{
-@include flexbox(row,center ,center ,nowrap );
-  width: 80px;
-height: 29px;
-flex-shrink: 0;
-border-radius: 2px;
-background: var(--green, #99E2D0);
-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-position : absolute;
-top : 19px;
-right : 12px;
-}
-
-.restaurants__card__nouveau__p{
-color: var(--dark-green, #008766);
-text-align: center;
-@include font(14px,500 ,normal);
-}
-
-.restaurants__card__coeur{
-  position : absolute;
-  bottom : 33px;
-  right : 25px;
+      &__coeur{
+        position : absolute;
+        bottom : 33px;
+        right : 25px;
+      }
+  }
 }
 
 
@@ -282,32 +284,28 @@ text-align: center;
 padding: 6% 7%;
 gap: 16px;
 background-color: var(--dark-gray-writing-color);
+  &__logo{
+    width: 139px;
+    height: 27px;
+    color : var(--white);
+    font-family: "Shrikhand", cursive;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  &__liensflexbox{
+    @include flexbox(column,center ,flex-start ,wrap );
+    gap : 7px;
+    &--lien{
+      color : var(--white);
+      @include font(16px, 500, normal);
+      @include flexbox(row,center ,flex-start ,wrap );
+      gap : 11px;
+      text-decoration: none;
+    }
+  }
 }
-
-.footer__logo{
-  width: 139px;
-height: 27px;
-color : var(--white);
-font-family: "Shrikhand", cursive;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-}
-
-.footer__liensflexbox{
-  @include flexbox(column,center ,flex-start ,wrap );
-  gap : 7px;
-}
-
-.footer__liensflexbox--lien{
-  color : var(--white);
-  @include font(16px, 500, normal);
-  @include flexbox(row,center ,flex-start ,wrap );
-  gap : 11px;
-  text-decoration: none;
-}
-
 
 
 /* CSS SPECIFIQUE PAGE DES RESTAURANTS */
@@ -315,35 +313,23 @@ line-height: normal;
 /*Header*/
 
 .headersecondaire {
-  @include flexbox(row,left ,center ,nowrap );
   gap : 42px;
   height : 63px;
+  position : relative;
+  &__retourmenu{
+    position : absolute;
+    top : 10px;
+    left : 10px;
+  }
+  &__flexbox{
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+  }
  }
  
- .headersecondaire__logo{
- display: flex;
- width: 197px;
- height: 36px;
- padding: 0px 19px 0px 16px;
- justify-content: center;
- align-items: center;
- flex-shrink: 0;
- text-align: center;
- font-family: Shrikhand;
- font-size: 30px;
- font-style: normal;
- font-weight: 400;
- line-height: normal;
- }
- 
- .headersecondaire__retourmenu{
- width : 30px;
- height : 30px;
- }
-
 /*Illustration*/ 
-
-
 
 
 .illustrationrestaurant__image {
@@ -372,25 +358,24 @@ line-height: normal;
   @include flexbox(row, start, center, nowrap);
   width : 91%;
   position : relative;
+  &__titre{
+    color: var(--black, #101010);
+    font-family: Shrikhand;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: calc(100% - 40px);
+  }
+  &__coeur{
+    width: 22px;
+    height: 22px;
+    font-size: 22px;
+    position: absolute; 
+    right: 5%; /* Marge de 11% à droite par rapport à l'écran */
+  }
 }
 
-.titrerestaurant__titre{
-color: var(--black, #101010);
-font-family: Shrikhand;
-font-size: 28px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-max-width: calc(100% - 40px);
-}
-
-.titrerestaurant__coeur {
-  width: 22px;
-  height: 22px;
-  font-size: 22px;
-  position: absolute; 
-  right: 5%; /* Marge de 11% à droite par rapport à l'écran */
-}
 
 /*Recettes*/ 
 
@@ -399,77 +384,67 @@ max-width: calc(100% - 40px);
   @include flexbox(column,center, center, nowrap);
   gap : 12px;
   width : 100%;
-}
-.recettesflexbox__titre{
- @include font(16px, 300, normal);
- width : 93%;
- position: relative;
-}
-
-.recettesflexbox__titre::after {
-  content: '';
-  position: absolute;
-  bottom: -5px; 
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background: #99E2D0;
-}
-
-.recettesflexbox__recette{
-@include flexbox(column,center,start ,nowrap );
-width : 100%;
-gap : 5px;
-overflow : hidden;
-}
-
-.recettesflexbox__checkbox{
-  @include flexbox(row, space-between, start, nowrap);
-  width: 93%;
-height: 69px;
-box-sizing: border-box;
-align-items: center;
-border-radius: 15.043px;
-background: var(--white, #FFF);
-box-shadow: 0px 4.011494159698486px 15.043103218078613px 0px rgba(0, 0, 0, 0.10);
-padding : 15px 15px 15px 15px;
-gap : 15px;
-}
-
-
-
-.recettesflexbox__recette--titre{
-  @include font(18px, 500, normal);
-  font-weight: bold;
-  text-overflow: ellipsis;
-  text-wrap: nowrap;
-  overflow: hidden;
-  width: 100%;
-}
-
-.recettesflexbox__recette--descriptionetprix{
-  @include flexbox(row,center,start ,nowrap );
-  width : 100%;
-  justify-content: space-between;
-}
-
-.recettesflexbox__recette--description{
-  @include font(15px, 300, normal);
-  width : 82%;
-  white-space: nowrap;
-    display: inline-block;
+  &__titre{
+    @include font(16px, 300, normal);
+    width : 93%;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: -5px; 
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: #99E2D0;
+    }
+  }
+  &__recette{
+    @include flexbox(column,center,start ,nowrap );
+    width : 100%;
+    gap : 5px;
+    overflow : hidden;
+    &--titre{
+      @include font(18px, 500, normal);
+      font-weight: bold;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 100%;
+      white-space: nowrap;
+    }
+    &--descriptionetprix{
+      @include flexbox(row,center,start ,nowrap );
+      width : 100%;
+      justify-content: space-between;
+    }
+    &--description{
+      @include font(15px, 300, normal);
+      width : 82%;
+      white-space: nowrap;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &--prix{
+      @include font(17px, 700, normal)
+    }
+    &__checkbox{
+      height: 69px;
+    }
+  }
+  &__checkbox{
+    @include flexbox(row, space-between, start, nowrap);
+    width: 93%;
+    height: 69px;
+    box-sizing: border-box;
+    align-items: center;
+    border-radius: 15.043px;
+    background: var(--white, #FFF);
+    box-shadow: 0px 4.011494159698486px 15.043103218078613px 0px rgba(0, 0, 0, 0.10);
+    gap : 15px;
     overflow: hidden;
-    text-overflow: ellipsis;
+  }
 }
 
-.recettesflexbox__recette--prix{
-  @include font(17px, 700, normal);
-}
-
-.recettesflexbox__recette__checkbox{
-  width: 59px;
-  height: 69px;
-}
 
 
 .commande__btn {
@@ -478,21 +453,16 @@ gap : 15px;
   flex-shrink: 0;
   margin-top: 27px;
   margin-bottom: 50px;
-}
-
-.commande__btn--texte {
-  color: var(--white, #FFF);
-  text-align: center;
-  @include font(16px, 500, normal);
+  &--texte{
+    color: var(--white, #FFF);
+    text-align: center;
+    @include font(16px, 500, normal);
+  }
 }
 
 /* Responsive version ecran larges */
 
 @media (min-width: 1023px) {
-
-  .headersecondaire__logo {
-    width: 80%;
-}
 
   .illustrationrestaurant__image {
     max-height: 500px;
@@ -516,16 +486,15 @@ gap : 15px;
   padding: 30px 25px;
   gap: 80px;
   justify-content : right;
-}
+  &__logo{
+    order : 2;
+    margin-right : 25px;
+  }
+  &__liensflexbox{
+    flex-direction: row;
+  }
+  }
 
-.footer__logo{
-  order : 2;
-  margin-right : 25px;
-}
-
-.footer__liensflexbox{
-  flex-direction : row;
-}
 
 .header{
   height : 96px;
@@ -542,23 +511,13 @@ gap : 15px;
 .fonctionnement {
   margin: auto;
   width: 75%;
-}
-
-.fonctionnement__etapes__flexbox{
-  flex-direction: row;
-  justify-content: left;
-  gap : 35px;
-}
-
-
-.restaurants__title{
-  width : 100%;
-}
-
-.restaurants__card{
-  min-width: 34%;
-  max-width: 45%;
-  margin-top: -50px;
+  &__etapes{
+    &__flexbox{
+      flex-direction: row;
+      justify-content: left;
+      gap : 35px;
+    }
+  }
 }
 
 .restaurants{
@@ -567,6 +526,14 @@ gap : 15px;
   padding-left: 12%;
   padding-right: 12%;
   gap : 100px;
+  &__title{
+    width : 100%;
+  }
+  &__card{
+    min-width : 34%;
+    max-width : 45%;
+    margin-top : -50px;
+  }
 }
 
 }
